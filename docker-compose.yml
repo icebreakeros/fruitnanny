@@ -8,7 +8,6 @@ services:
     volumes:
       - ./configuration/janus:/etc/janus
       - ./configuration/ssl:/etc/fruitnanny-ssl
-    command: /usr/bin/janus -o
     expose:
       - 8088 # api http
       - 8089 # api https
