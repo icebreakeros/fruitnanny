@@ -9,7 +9,7 @@ RUN buildDeps="build-essential git debhelper gobject-introspection gtk-doc-tools
     && git clone --depth 1 --single-branch --branch libnice-0.16 https://salsa.debian.org/tzafrir/libnice.git /tmp/libnice \
     && cd /tmp/libnice \
     && dpkg-buildpackage -b --no-sign -rfakeroot \
-    && dpkg -i ../libnice10_0.1.16-1_armhf.deb ../libnice-dev_0.1.16-1_armhf.deb \
+    && dpkg -i ../libnice10_0.1.16-1_armhf.deb ../gir1.2-nice-0.1_0.1.16-1_armhf.deb ../libnice-dev_0.1.16-1_armhf.deb \
     && cd /tmp \
     && apt-get source janus \
     && cd janus-0.6.1 \
