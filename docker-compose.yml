@@ -8,7 +8,6 @@ services:
     volumes:
       - ./configuration/janus:/etc/janus
       - ./configuration/ssl:/etc/fruitnanny-ssl
-    command: /usr/bin/janus -o
     expose:
       - 8088 # api http
       - 8089 # api https
@@ -36,6 +35,7 @@ services:
     privileged: true
     volumes:
       - ./fruitnanny_config.js:/opt/fruitnanny/fruitnanny_config.js
+      - ./bin:/opt/fruitnanny/bin
     network_mode: "host"
     depends_on:
       - janus
@@ -43,7 +43,7 @@ services:
       - 7000
 
   nginx:
-    image: arm32v7/nginx
+    image: arm32v6/nginx:alpine
     restart: always
     network_mode: "host"
     depends_on:
